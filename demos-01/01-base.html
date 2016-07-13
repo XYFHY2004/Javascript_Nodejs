@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<div id="example"></div>
+	<script>
+	var  matrix = [[1,2,3], [4,5,6], [7,8,9]];
+	var p = {x:2.3, y:-1.2};
+	var q = {};
+	q.x = 2.3;
+	q.y = -1.2;
+
+	var obj = {x:1, y:{z:2}};
+	obj.y.z = 3;
+	obj.z = 5;
+
+	var objecttemp = new Object();
+	objecttemp.x = 5;
+	objecttemp.y = 6;
+
+	var eq = 3=="3";
+	var e = 3==="3";
+
+    if('x' in p){
+    	e = true;
+    }
+
+    if(obj instanceof Array){
+    	e = true;
+    }
+    else{
+        e = false;
+    }
+     
+    if(typeof e == "boolean"){
+    	e = true;
+    }
+
+    var arr = [];
+    for(var i = 0; i < 10; arr[i++] = 0);
+
+    function getTestValue(){
+    	return "ok";
+    }
+
+
+		
+	</script>
+</body>
+</html>

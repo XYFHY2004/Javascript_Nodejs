@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+
+<script>
+	var obj = {};
+	var obj = {x:1, y:2, z:3};
+	var obj = {name:"wang wu", age: 28, friends:[{name:"zhang san", age: 26}, {name:"li si", age: 26}]};
+	var obj = new Object();
+	var obj = Object.create({name:"book1", year:"2015-60-01"});
+
+    var result = false;
+    if("name" in obj){
+        result = true;
+    }
+
+    if(obj.hasOwnProperty("name")){
+    	result = true;
+    	console.log("true");
+    }
+
+    function getKeys(obj){
+    	var result = [];
+        if(typeof obj !== "object") 
+        	// throw “error”;
+        	return result;
+
+        for(var prop in obj){
+        	if(obj.hasOwnProperty(prop)){
+                result.push(prop);
+             }
+        }
+        return result;
+    }
+    
+    //以下方式创建的对象，不能使用 hasOwnProperty 方法判断属性
+    var obj1 = Object.create({name:"book1", year:"2015-60-01"});  
+    var keys = getKeys(obj1); // keys 为空
+
+    obj1 = {name:"book1", year:"2015-60-01"};
+    keys = getKeys(obj1);   // keys 个数为 2
+
+    var Book = {
+    	name:"bookname",
+    	year:"2015-05-06",
+
+    	//以函数的方式来实现读写器；用 get/set 代替 function  
+    	get getName(){return this.name;},
+    	get getYear(){return this.year;},
+         
+    	set setName(newName){this.name = newName;},
+    	set setYear(newYear){this.year = newYear;},
+    };
+
+    //以属性方法进行访问
+    var name = Book.getName;
+    Book.setName="myBook";
+    name = Book.getName;
+
+    var serialnum = {
+        // $ 表示私有属性
+    	$index:0,
+
+    	get next(){ 
+    		//返回当前值，然后自增
+    		return this.$index++; 
+    	},
+
+    	set next(n){
+    		if(n >= this.$index)
+    			this.$index = n;
+    		else throw "序列号的值不能比当前值小";
+    	},
+
+     };
+
+    var value = serialnum.$index;
+    value = serialnum.next;
+    value = serialnum.$index;
+
+    // 获取自有属性描述
+    var description = Object.getOwnPropertyDescriptor(serialnum, "next");
+
+    //设置属性特性
+    var o = {};
+    Object.defineProperty(o, "x", {
+           value: 1,
+           writable: true,
+           enumerable: false,
+           configurable: true
+    	});
+
+    var newo = Object.defineProperties(o,
+        {
+        	x: { value: 1, writable: true, enumerable: false, configurable: true},
+        	y: { value: 2, writable: true, enumerable: false, configurable: true},
+
+        });
+    
+
+    
+    console.log(description);
+
+</script>
+	
+</body>
+</html>
