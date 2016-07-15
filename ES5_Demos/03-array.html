@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+<script>
+    // 创建一个空数组
+	var empty = [];
+    var empty = new Array();
+    var empty = new Array(10);
+
+	var primes = [2, 3, 5, 7, 11];
+
+	//数组元素可以不同类型
+    var misc = [1.1, true, "a", ];
+    
+    // 元素可以是表达式
+    var base = 1024;
+    var table = [base, base + 1, base + 2, base + 3];
+    
+    //可以嵌套； 元素也可以是对象
+    var b = [[1, {x:1, y:2}], [2, {x:3, y:4}]];
+
+    var a = [1, 2, 3];
+    a[100] = 0;
+    a.push("zero");
+    a.push("one", "two");
+
+    // delete 元素不会改变数组的长度 ！！！
+    delete a[0];
+
+    var len = a.length;
+    
+    //合并为逗号分割的字符串
+    var array = [1, 2, 3];
+    var value = array.join();
+    value = array.join(" ");
+
+    // 反转
+    value = array.reverse();
+
+    //默认按字母顺序排序
+    var a = ["banana", "cherry", "apple"];
+    var s = a.sort().join(", ");
+     
+     //按从小到大的顺序排列
+     a = [77, 55, 66, 11, 22, 33, 44];
+     var value = a.sort(function(a, b){
+     	return a - b;
+     });
+     // 从大到小排列
+     value = a.sort(function(a, b){
+     	return b - a;
+     });
+
+    //数组的合并
+    array = [1, 2, 3];
+    var newArray = array.concat(4, 5, 6);
+    newArray = array.concat([4, 5, 6]);
+    newArray = array.concat([4, 5], [6, 7]);
+    newArray = array.concat([4, [5,[6, 7]]]);  // [1, 2, 3, 4, [5, [6, 7]]]
+
+     //切片 
+    var a = [1, 2, 3, 4, 5, 6];
+    var value = a.slice(0, 3); // [1, 2, 3]
+    value = a.slice(3); // [4, 5, 6]
+    value = a.slice(1, -1); // [2, 3, 4, 5]
+    value = a.slice(-3, -2);  // [4]
+    value = a.slice(-1); // [6]
+
+     // 删除/插入元素   会修改调用数组 
+     var a = [1, 2, 3, 4, 5, 6, 7, 8];
+     var value = a.splice(4);  // 返回 [5, 6, 7, 8] , a的值为 [1, 2, 3, 4]  
+     // 从第一个位置开始，连续删除 2 个元素
+     value = a.splice(1, 2);  //返回 [2, 3] ,  a的值为[1, 4]
+     
+     // 插入
+     value = a.splice(1, 0, "ab", "cd");  // a = [1, 'ab', 'cd', 4]
+     value = a.splice(1, 2, [2, 3], 3);  // a = [1, [2, 3], 3, 4]
+     
+     // push / pop   在数组的尾部插入或删除数据
+     var a = [];
+     a.push(1, 2, 3);
+     a.pop();
+
+     // unshift  / shift  在数组的头部插入或删除数据
+     var a = [];
+     a.unshift(6);  // a = [6]
+     a.unshift(3, 4, 5); // a = [3, 4, 5, 6]
+     a.shift(); // a = [4, 5, 6]
+     a.unshift(1, [2, 3]); // a = [1, [2, 3], 4, 5, 6]
+     a.shift();
+     value = a.shift();  //value = [2, 3]  a = [4, 5, 6]
+     
+     
+     // map    返回一个新的数组
+     var a = [1, 2, 3];
+     var b = a.map(function(x){ return x * x;});
+
+
+    console.log("end");
+
+
+
+</script>
+	
+</body>
+</html>
