@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>function</title>
+</head>
+<body>
+	<script>
+        
+        // 无返回值
+		function printprops(objs){
+            for(var p in objs){
+                console.log(p + ": " + objs[p] + "\n");
+            }
+		}
+        
+        //有返回值
+        function distance(x1, y1, x2, y2){
+            var dx = x2 - x1;
+            var dy = y2 - y1;
+            return Math.sqrt(dx * dx + dy * dy);
+        }
+        
+        //递归调用
+        function factorial(x){
+            if(x <= 1) 
+            	return 1;
+            return x * factorial(x-1);
+        }
+
+        //函数可以赋值给一个变量
+        var p = 10;
+        var square = function(x){
+        	return x * x;
+        }
+        var value = square(p);
+
+        var squareEx = function(){
+        	return p * p;
+        }
+        
+        value = squareEx();
+
+        p = 20;
+        var value1 = squareEx();
+
+
+        var f = function fact(x){
+        	if(x <= 1){
+                return 1;
+        	}
+        	else{
+        		return x * fact(x - 1);
+        	}
+        }
+
+
+        //作为参数来传递 
+        // data.sort(function(a, b){ return a - b; });
+        
+        //定义后立即调用 ！！！
+        var par = 10;
+        var tensquared = (function(x) { return x * x; }(par));
+        par = 20;
+        var value = tensquared;
+
+        
+        var counter = (function(){
+        	var i = 0;
+            
+            // 这里返回的是一个对象 ！！！！！  所以 counter 是一个对象
+        	return {
+        		get: function(){
+        			return i;
+        		},
+        		set: function(val){
+                    i  = val;
+        		},
+        		increment: function(){
+                    return ++i;
+        		},
+        	};
+        })();
+
+
+        var orgin = counter.get();
+        counter.set(3);
+        var value = counter.increment();
+        var value1 = counter.increment();
+
+
+
+
+        console.log("end");
+
+	</script>
+</body>
+</html>
