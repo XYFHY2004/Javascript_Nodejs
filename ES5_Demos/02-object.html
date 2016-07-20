@@ -11,6 +11,12 @@
 	var obj = {};
 	var obj = {x:1, y:2, z:3};
 	var obj = {name:"wang wu", age: 28, friends:[{name:"zhang san", age: 26}, {name:"li si", age: 26}]};
+    var obj = {10:"Children", 100:"Very Old"};
+
+    //var value = obj.10; // error
+    var value = obj["10"];  // ok
+
+
 	var obj = new Object();
 	var obj = Object.create({name:"book1", year:"2015-60-01"});
 
