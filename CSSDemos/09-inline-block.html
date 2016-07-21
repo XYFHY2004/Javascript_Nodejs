@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>inline-block</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 100px;
+            margin: 1em;
+
+            /*
+              使用浮动来排列
+            */
+            float: left;
+            border: solid blue 1px;
+        }
+
+        .afterbox {
+            clear: left;
+
+            width: 600px;
+            height: 50px;
+            border: solid blue 1px;
+        }
+
+        .box2 {
+            display: inline-block;
+
+            width: 200px;
+            height: 100px;
+            margin: 1em;
+            border: solid red 1px;
+        }
+
+        .afterbox2{
+            width: 600px;
+            height: 50px;
+            border: solid red 1px;
+        }
+    </style>
+</head>
+<body>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="afterbox"> 需要清除浮动 </div>
+
+<div class="box2"></div>
+<div class="box2"></div>
+<div class="box2"></div>
+<div class="box2"></div>
+<div class="box2"></div>
+<div class="box2"></div>
+<div class="afterbox2">需要清除浮动</div>
+</body>
+</html>

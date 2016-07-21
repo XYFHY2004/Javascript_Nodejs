@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>box-sizing</title>
+    <style>
+
+        * {
+            /*
+             box-sizing 能够保证所有width属性相同的元素保持一样的宽度,
+             而不论是否设置了其 margin、padding 值
+
+            */
+
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+        }
+
+        .simple {
+            width: 500px;
+            margin: 20px auto;
+            border: solid blue 1px;
+
+
+        }
+
+        .feancy {
+            width: 500px;
+
+            /*  在没有设置 box-sizing 的情况下, margin 和 padding 值会影响元素的宽度 */
+            margin: 20px auto;
+            padding: 50px;
+            border: solid blue 1px;
+
+        }
+
+    </style>
+</head>
+<body>
+<div class="simple"></div>
+<div class="feancy"></div>
+</body>
+</html>

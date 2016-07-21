@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #contenthead{
+            /*width: 100%;*/
+            /*width: 800px;*/
+            max-width: 800px;
+
+            /*
+              设置左右外边距为auto,使contenthead居中显示
+              如果 width 为固定值, 则当浏览器宽度小于固定值时,会出现滚动条;
+              此时, 可用max-width 代替 width 或者设置width为 100%.
+            */
+            margin: 0 auto;
+
+            /* 使contenthead内部内容居中显示  */
+            text-align: center;
+
+            border: #ff383c;
+            border-style: dashed;
+        }
+        #contenthead li{
+            /*横向排列*/
+            /*display: inline;*/
+            display: inline-block;
+
+
+            /* 所有值列表 */
+            /*设为 none 时不会占用页面空间*/
+            /*display: none;*/
+
+            /*display: inline;*/
+            /*display: block;*/
+            /*display: inline-block;*/
+            /*display: contents;*/
+            /*display: list-item;*/
+            /*display: inline-list-item;*/
+            /*display: table;*/
+            /*display: inline-table;*/
+            /*display: table-cell;*/
+            /*display: table-column;*/
+            /*display: table-column-group;*/
+            /*display: table-footer-group;*/
+            /*display: table-header-group;*/
+            /*display: table-row;*/
+            /*display: table-row-group;*/
+            /*display: table-caption;*/
+            /*display: flex;*/
+            /*display: inline-flex;*/
+            /*display: grid;*/
+            /*display: inline-grid;*/
+            /*display: ruby;*/
+            /*display: ruby-base;*/
+            /*display: ruby-text;*/
+            /*display: ruby-base-container;*/
+            /*display: ruby-text-container;*/
+            /*display: run-in;*/
+
+            /*!* Global values *!*/
+            /*display: inherit;*/
+            /*display: initial;*/
+            /*display: unset;*/
+
+        }
+
+
+    </style>
+</head>
+<body>
+<div id="content">
+    <div id="contenthead">
+        <li>首页</li>
+        <li>文章</li>
+        <li>图书</li>
+        <li>有声</li>
+    </div>
+</div>
+
+
+</body>
+</html>

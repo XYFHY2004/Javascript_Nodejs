@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>media</title>
+    <style>
+
+        @media screen and (min-width: 600px) {
+            nav {
+                float: left;
+                width: 25%;  // 要使用百分比
+
+            }
+
+            section {
+                margin-left: 25%;
+
+            }
+        }
+
+        @media screen and (max-width: 599px) {
+            nav li {
+                display: inline;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div class="clearfix">
+    <nav>
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+        <li>four</li>
+    </nav>
+    <section>当你调整浏览器窗口大小时，布局比以前更酷了！<p>使用 meta viewport 之后可以让你的布局在移动浏览器上显示的更好</p></section>
+    <section>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum,
+        nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue
+        eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu,
+        lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi,
+        sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui
+        eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor
+        porta. Cras ac leo purus. Mauris quis diam velit.
+    </section>
+</div>
+</body>
+</html>

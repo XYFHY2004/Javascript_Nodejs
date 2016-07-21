@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo</title>
+    <style>
+        body{
+            /*
+            确保有足够的空间来显示 footer
+            */
+            margin-bottom: 120px;
+        }
+        .container{
+            position: relative;
+
+            border: solid red 1px;
+        }
+
+        nav{
+            position: absolute;
+            left: 0px;
+            width: 200px;
+            border: solid blue 1px;
+        }
+        section{
+            /*
+               确保了有足够的空间容纳 nav 元素。  nav 宽度为 200px
+            */
+            margin-left: 200px;
+
+            border: solid blue 1px;
+            min-height: 30px;
+        }
+
+        footer{
+            position: fixed;
+            bottom: 0px;
+            left: 0px;
+            height: 70px;
+            width: 100%;
+
+            border: solid blue 1px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <nav>
+        <li>Home</li>
+        <li>Taco Menu</li>
+        <li>Draft List</li>
+        <li>Hours</li></nav>
+    <section>
+
+    </section>
+    <section>
+
+    </section>
+    <section>
+
+    </section>
+</div>
+<footer></footer>
+
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>flexbox</title>
+    <style>
+        .container{
+            display: -webkit-flex;
+            display: flex;
+
+            /*border: solid blue 1px;*/
+        }
+        nav{
+            width: 200px;
+        }
+        .column{
+            -webkit-flex: 1;
+            flex: 1;
+        }
+        .initial{
+
+            /*
+            flex 设置为 initial 宽度由width 和 min-width 决定
+            */
+
+            flex: initial;
+            -webkit-flex: initial;
+            width: 200px;
+            min-width: 100px;
+
+
+            /*
+               flex 设置为1  则标识宽度占:   1/总的flex元素个数
+            */
+            /*-webkit-flex: 1;*/
+            /*flex: 1;*/
+
+            border: solid blue 1px;
+        }
+
+        .none{
+
+            /*
+              flex 设置为none 则width 决定其宽度
+            */
+
+            -webkit-flex: none;
+            flex:none;
+            width: 200px;
+
+            /*-webkit-flex: 1;*/
+            /*flex: 1;*/
+
+            border: solid blue 1px;
+        }
+        .flex1{
+            flex:1;
+            -webkit-flex: 1;
+
+            border: solid blue 1px;
+        }
+        .flex2{
+            flex:2;
+            -webkit-flex: 2;
+
+            /*flex:1;*/
+            /*-webkit-flex: 1;*/
+
+            border: solid blue 1px;
+        }
+        .vertical-container{
+            height: 300px;
+            display: -webkit-flex;
+            display: flex;
+            border: solid blue 1px;
+
+            /*
+              上下居中
+            */
+            align-items: center;
+            -webkit-align-items: center;
+
+            /*
+              左右居中
+            */
+            justify-content: center;
+            -webkit-justify-content: center;
+        }
+
+        .vertical-container div{
+            border: solid blue 1px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <nav>
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+        <li>four</li>
+    </nav>
+    <div class="column">
+        <section>当你调整浏览器窗口大小时，布局比以前更酷了！<p>使用 meta viewport 之后可以让你的布局在移动浏览器上显示的更好</p></section>
+        <section>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum,
+            nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec
+            congue
+            eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare
+            eu,
+            lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum
+            nisi,
+            sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae
+            dui
+            eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor
+            porta. Cras ac leo purus. Mauris quis diam velit.
+        </section>
+    </div>
+
+</div>
+<div class="container">
+    <div class="initial">空间足够的时候，我的宽度是200px，如果空间不足，我会变窄到100px，但不会再窄了。</div>
+    <div class="none">无论窗口如何变化，我的宽度一直是200px。</div>
+    <div class="flex1">我会占满剩余宽度的1/3。</div>
+    <div class="flex2">我会占满剩余宽度的2/3。</div>
+</div>
+
+<div class="vertical-container">
+    <div>CSS里总算是有了一种简单的垂直居中布局的方法了！</div>
+    <!--<div>CSS里总算是有了一种简单的垂直居中布局的方法了！</div>-->
+    <!--<div>CSS里总算是有了一种简单的垂直居中布局的方法了！</div>-->
+    <!--<div>CSS里总算是有了一种简单的垂直居中布局的方法了！</div>-->
+    <!--<div>CSS里总算是有了一种简单的垂直居中布局的方法了！</div>-->
+</div>
+
+</body>
+</html>
