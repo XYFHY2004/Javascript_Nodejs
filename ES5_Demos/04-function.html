@@ -89,9 +89,124 @@
         var value1 = counter.increment();
 
 
+        // 嵌套函数中 this 作用域
+        var o = {
+            datas:[1, 2, 3, 4, 5, 6],
+            m: function(){
+
+//                存储 this , 很重要!!!!
+                var self = this;
+                console.log("调用函数 this === o: " + (this === o));
+
+                //  函数调用
+                f();
+
+                function f() {
+                    console.log("嵌套函数 f this === o: " + (this === o));
+                    console.log("嵌套函数 f this === o.m: " + (this === o.m));
+                    console.log("嵌套函数 f self === o: " + (self === o));
+                }
+
+                console.log("-------------------------------------");
+
+                var f1 = function() {
+                    console.log("嵌套函数 f1 this === o: " + (this === o));
+                    console.log("嵌套函数 f1 this === o.m: " + (this === o.m));
+                    console.log("嵌套函数 f1 self === o: " + (self === o));
+
+                    self.datas.forEach(function(obj){
+                        console.log("datas: " + obj);
+                    });
+                }
+
+                f1();
+
+            }
+        };
+
+//        方法调用
+        o.m();
 
 
-        console.log("end");
+//        使用 arguments 标识符判断、处理实参
+		function func(x, y, z) {
+		    if(arguments.length != 3){
+		    	throw new Error("缺少参数");
+			}
+		}
+
+		func(10, 20, 30);
+
+//        处理任意数量的参数, 为规范代码,不推荐使用
+		function funcArgumt() {
+            for(var i = 0; i < arguments.length; i++){
+                console.log(arguments[i]);
+            }
+        }
+
+
+//        funcArgumt(10, 30, 50);
+        funcArgumt();
+
+
+//        闭包
+//        闭包由函数调用和其相关上下文参照环境共同构成; 普通的函数调用, 调用完之后, 函数及其内部被定义的局部变量被销毁,
+        // 而闭包,由于存在上下文环境的引用关系, 故而在函数执行完之后, 其内部被定义的局部变量任然被保存在了内存之中。
+//        定义函数并立即调用
+        var uniqueInteger = (function(){
+            var counter = 0;  // 私有变量
+            return function(){ return counter++;}
+        }());
+
+
+        function counterEx(n){
+            return {
+                get count(){ return n++; },
+                set count(m){
+                    if(m >= n)
+                    {
+                        n = m;
+                    }
+                    else{
+                        throw new Error("error");
+                    }
+                }
+            };
+        }
+
+
+        function funcTemp(){
+        	for(var i = 0; i < 10; i++){
+        		setTimeout((function(e){
+        			console.log(e);
+				})(i), 1000);
+			}
+		}
+
+
+		funcTemp();
+
+
+        var name = "global name";
+        var object = {
+            name:"local name",
+            getName: (function(){
+                return function(){
+                    return this.name;
+                }
+            })()
+        }
+
+        var nameTemp = object.getName();
+
+
+
+
+
+
+
+
+        console.log("The js End");
 
 	</script>
 </body>
